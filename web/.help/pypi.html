@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>PyPI 镜像使用帮助</title>
+    <link rel="stylesheet" type="text/css" href="/.resource/css/mirror.css" media="screen" />
+    <script type="text/javascript" src="/.resource/js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="/.resource/js/helptool.js"></script>
+</head>
+
+<body>
+
+    <h1>PyPI 镜像使用帮助</h1>
+
+    <div id="mirror-data">
+        <h3>说明</h3>
+        <p>
+            本镜像为 Python 软件包（PIP）镜像，详细信息可参考 <a href='https://pypi.python.org/pypi'>PyPI 官网</a>。
+        </p>
+    </div>
+
+    <div>
+        <h3>使用说明</h3>
+        <h3>1. Python 升级</h3>
+        <p>执行以下命令查看 Python 版本：</p>
+        <pre>python -V</pre>
+        <p>如果所安装的 Python 为 2.7.x 或者 3.x.x 版本，则不需要升级。如果 Python 版本较低（2.6.x 及以下版本），请参阅 <a href='UpgradePython.pdf'>Python 升级说明.pdf</a> 完成 Python 升级。</p>
+        <h3>2. 安装 pip</h3>
+        <p>执行以下命令查看是否安装有 pip</p>
+        <pre>pip -V</pre>
+        <p>如果未安装 pip，需要按照以下方式进行安装。</p>
+        <p><b>2.1 在线安装</b></p>
+        <p>按照官网（<a href='https://pip.pypa.io/en/stable/installing/'>https://pip.pypa.io/en/stable/installing/</a>）所述方法安装 get-pip.py。</p>
+        <b>2.2 离线安装</b>
+        <p>首先安装<code>setuptools</code>，在官网（<a href='https://pypi.python.org/pypi/setuptools#code-of-conduct'>https://pypi.python.org/pypi/setuptools</a>）下载 setuptools-<版本号>.zip：</p>
+        <p><img src="/.resource/img/setuptools.png"  alt="setuptools-x.x.x.zip" /></p>
+        <p>解压zip包后，进入目录运行</p>
+        <pre>python setup.py install</pre>
+        <p>即可完成 setuptools 安装。</p>
+        <p>然后安装<code>pip</code>，在官网（<a href='https://pypi.python.org/pypi/pip'>https://pypi.python.org/pypi/pip</a>）下载 pip-<版本号>.tar.gz：</p>
+        <p><img src="/.resource/img/pip.png"  alt="pip-x.x.x.tar.gz" /></p>
+        <p>解压tar包后，进入目录运行</p>
+        <pre>python setup.py install</pre>
+        <p>即可完成 pip 安装。</p>
+        <h3>3. 修改 pip 配置</h3>
+        <p>编辑 pip 的配置文件 pip.conf，将 index-url 修改为镜像站的地址。</p>
+        <p>pip 的配置文件一般位于（如果没有该文件，请直接创建）：</p>
+        <pre>
+· Unix/Linux: <code>$HOME/.config/pip/pip.conf</code>
+· macOS: <code>$HOME/Library/Application Support/pip/pip.conf</code>
+· Windows: <code>%APPDATA%\pip\pip.ini</code>
+</pre>
+        <p>修改后的 pip 配置文件示例如下：</p>
+        <pre>[global]
+index-url = http://mymirrorsite/pypi/web/simple
+format = columns</pre>
+        <p>当 pip 和 pip3 并存时，只需修改 ~/.pip/pip.conf。</p>
+        <p>使用 pip 时如果出现 <code>configparser.MissingSectionHeaderError: File contains no section headers.</code>，说明 pip.conf 没有加上 <code>[global]</code> 这一行。</p>
+        <h3>4. 使用 pip</h3>
+        <p>新版 pip 需要使用安全地址，由于镜像站暂不支持 https 服务，使用 pip 时需要添加 <code>--trusted-host mymirrorsite</code>参数，例如：</p>
+        <pre>pip install [SomePackage] --trusted-host mymirrorsite</pre>
+        <p></p>
+        <p></p>
+    </div>
+
+</body>
+
+</html>

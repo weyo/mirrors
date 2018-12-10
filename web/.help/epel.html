@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>EPEL 镜像使用帮助</title>
+    <link rel="stylesheet" type="text/css" href="/.resource/css/mirror.css" media="screen" />
+</head>
+<body>
+
+<h1>EPEL 镜像使用帮助</h1>
+
+<div id="mirror-data">
+    <h3>说明</h3>
+    <p>
+        EPEL (Extra Packages for Enterprise Linux) 是由 Fedora Special Interest Group 为企业 Linux 创建、维护和管理的一个高质量附加包集合，适用于但不仅限于 Red Hat Enterprise Linux (RHEL), CentOS, Scientific Linux (SL), Oracle Linux (OL)等。
+    </p>
+    <h3>收录架构</h3>
+    <p>
+        官方支持的所有架构
+    </p>
+    <h3>收录版本</h3>
+    <p>
+        官方支持的所有版本
+    </p>
+</div>
+
+<div id="mirror-usage">
+    <h3>使用说明</h3>
+    <p>首先执行以下命令安装epel</p>
+    <pre>yum install -y epel-release</pre>
+    <p>然后运行以下命令更新repo文件</p>
+    <pre>
+sed -e <code>'s!^mirrorlist=!#mirrorlist=!g'</code> \
+    -e <code>'s!^#baseurl=!baseurl=!g'</code> \
+    -e <code>'s!//download\.fedoraproject\.org/pub!//mymirrorsite!g'</code> \
+    -i /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo</pre>
+    
+    <p></p>
+    <p></p>
+</div>
+
+</body>
+</html>

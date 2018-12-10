@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Ubuntu 镜像使用帮助</title>
+    <link rel="stylesheet" type="text/css" href="/.resource/css/mirror.css" media="screen" />
+    <script type="text/javascript" src="/.resource/js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="/.resource/js/helptool.js"></script>
+</head>
+
+<body>
+
+    <h1>Ubuntu 镜像使用帮助</h1>
+
+    <div id="mirror-data">
+        <h3>收录架构</h3>
+        <ul>
+            <li>i386</li>
+            <li>x86_64</li>
+        </ul>
+        <h3>收录版本</h3>
+        <ul>
+            <li>12.04 LTS</li>
+            <li>14.04 LTS</li>
+            <li>16.04 LTS</li>
+            <li>15.04</li>
+            <li>16.10</li>
+            <li>17.04</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>使用说明</h3>
+        <p>Ubuntu 的软件源配置文件是
+            <code>/etc/apt/sources.list</code>。将该文件替换为下面内容（替换前做好备份），即可使用软件源镜像。</p>
+
+        <form>
+            <div>
+                <label>选择你的Ubuntu版本: </label>
+                <select onchange="updateContent('.release', this.options[this.options.selectedIndex].value)">
+                    <option value="precise">12.04 LTS</option>
+                    <option value="trusty">14.04 LTS</option>
+                    <option value="xenial" selected="">16.04 LTS</option>
+                    <option value="vivid">15.04</option>
+                    <option value="yakkety">16.10</option>
+                    <option value="zesty">17.04</option>
+                </select>
+            </div>
+        </form>
+
+        <p></p>
+
+        <pre># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb http://mymirrorsite/ubuntu/ <code class="release">xenial</code> main restricted universe multiverse
+# deb-src http://mymirrorsite/ubuntu/ <code class="release">xenial</code> main restricted universe multiverse
+deb http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-updates main restricted universe multiverse
+# deb-src http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-updates main restricted universe multiverse
+deb http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-backports main restricted universe multiverse
+# deb-src http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-backports main restricted universe multiverse
+deb http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-security main restricted universe multiverse
+# deb-src http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-proposed main restricted universe multiverse
+# deb-src http://mymirrorsite/ubuntu/ <code class="release">xenial</code>-proposed main restricted universe multiverse</pre>
+
+        <p></p>
+        <p></p>
+    </div>
+
+</body>
+
+</html>

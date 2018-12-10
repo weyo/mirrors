@@ -1,0 +1,102 @@
+/* CSS file for 163 mirror site. http://mirrors.163.com/
+ * * Copyright (c) 2009, Netease corp.
+ * * This work is under Creative Common Attribution 2.5 China Mainland License.
+ * */
+body{
+    font-family:"Bitstream Vera Sans","Lucida Grande", Verdana, Lucida, sans-serif;
+    font-size: .9em;
+    margin: 0px 20px;
+}
+tr.even {
+    background:#EEE;
+}
+table th,td {
+    padding: 0em 0.6em;
+    height: 1.8em;
+}
+th {
+    text-align:left;
+    font-weight:bold;
+    background:#EEE;
+    border-bottom:1px solid #aaa;
+}
+a {
+    color: rgb(0, 0, 205);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+table {
+    border:1px solid #aaa;
+    border-left: 0px;
+    border-right: 0px;
+    float: left;
+    margin-bottom: 20px;
+}
+span {
+    margin-right: 20px;
+}
+code {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    white-space: nowrap;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#mirror-data, #mirror-usage, #mirror-links, #mirror-misc {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+h1, h3 {
+    color: rgb(0, 0, 205);
+}
+.hr {
+    border-bottom: dashed #777 1px;
+    width: 60%;
+}
+.hr hr {
+    display: none;
+}
+#footer {
+    text-align: center;
+    margin-bottom: 10px;
+    clear: both;
+}
+#footer a {
+    color: #555;
+    margin: 0px 10px;
+    font-size: 0.9em;
+}
+pre {
+    font-family: monospace;
+    font-size: 110%;
+    color: dimgrey;
+    border:1px dashed black;
+    background-color: #F7F7F7;
+    margin: 0px;
+    padding: 8px;
+    width: 800px;
+    line-height: 150%;
+    overflow:auto;
+}
+p.answer {
+    text-indent: 20px;
+    margin-bottom: 30px;
+}
+#distro-table {
+    width: 100%;
+}
+#copyright {
+    color: #555;
+    margin: 0px 10px;
+    font-size: 0.8em;
+}
+

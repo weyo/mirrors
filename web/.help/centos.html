@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>CentOS/Redhat 镜像使用帮助</title>
+    <link rel="stylesheet" type="text/css" href="/.resource/css/mirror.css" media="screen" />
+</head>
+<body>
+
+<h1>CentOS/Redhat 镜像使用帮助</h1>
+
+<div id="mirror-data">
+    <h3>收录架构</h3>
+    <ul>
+        <li>i386</li>
+        <li>x86_64</li>
+    </ul>
+    <h3>收录版本</h3>
+    <ul>
+        <li>CentOS/Redhat 6.*</li>
+        <li>CentOS/Redhat 7.*</li>
+    </ul>
+</div>
+
+<div id="mirror-usage">
+    <h3>使用说明</h3>
+    <p>首先备份 <code>/etc/yum.repos.d/</code> 下的所有 repo 文件（使用root用户）</p>
+    <pre>
+mkdir /etc/yum.repos.d/bak
+mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/bak</pre>
+    <p>然后根据系统版本下载对应版本repo文件, 放入/etc/yum.repos.d/</p>
+    <ul>
+        <li><a href="/.help/CentOS7-Base.repo">CentOS7/Redhat7</a></li>
+        <li><a href="/.help/CentOS6-Base.repo">CentOS6/Redhat6</a></li>
+    </ul>
+    <p>运行以下命令更新软件包缓存</p>
+    <pre>
+yum clean all
+yum makecache</pre>
+    <p></p>
+    <p></p>
+</div>
+
+</body>
+</html>
