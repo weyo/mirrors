@@ -1,6 +1,5 @@
 # 开源镜像站
 
-
 ## 说明
 
 本项目是镜像服务器的前端与后台维护脚本源码。
@@ -15,6 +14,7 @@
 - 日志路径：/mirrors/log/
 
 ### 其他
+
 更多信息可参阅博客 [使用 tunasync 搭建开源镜像站](http://weyo.me/pages/techs/how-to-make-a-mirror-site)。
 
 ## 致谢
